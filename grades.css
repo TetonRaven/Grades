@@ -1,0 +1,20 @@
+h1 {
+    margin-bottom: 0px;
+}
+h2 {
+    margin-bottom: 5px;
+}
+th {
+    text-align: left;
+    padding-bottom: 0px;
+}
+td {
+    padding: 3px;
+}
+.hilightedRow {
+    background-color: yellow;
+}
+.validationMessage {
+    color: red;
+    font-size: 10pt;
+}
