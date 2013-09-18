@@ -5,7 +5,7 @@
     <script type="text/javascript" src="knockout-2.3.0.js"></script>
     <link rel="stylesheet" type="text/css" href="grades.css" />
 </head>
-<body style="width: 1009px">
+<body>
 <h1>Test Results</h1>
 
 <h2 style="margin-top: 10px;">Scores</h2>
@@ -21,10 +21,10 @@
     <tbody data-bind="foreach: testScores">
     <tr data-bind="css: { hilightedRow: score() < 65 }">
         <td>
-            <input type="text" data-bind="value: studentName, valueUpdate: 'change', event: { blur: $root.save }" />
+            <input type="text" data-bind="value: studentName, valueUpdate: 'change', event: { change: $root.save }" />
         </td>
         <td>
-            <input type="text" data-bind="value: score, valueUpdate: 'change', event: { blur: $root.save }" />
+            <input type="text" data-bind="value: score, valueUpdate: 'change', event: { change: $root.save }" />
         </td>
         <td style="background-color: white">
             <input type="button" data-bind="click: $root.deleteScore" value="Delete" />
@@ -39,6 +39,7 @@
 <input type="button" value="Add Score" data-bind="click: addNewScore" />
 
 <h2>Summary</h2>
+<div style="color: red" data-bind="visible: invalid">There are one or more invalid entries. Summary results cannot be displayed until these are corrected.</div>
 <span>Minimum Score:</span>&nbsp;<span data-bind="text: minimumScore"></span><br>
 <span>Maximum Score:</span>&nbsp;<span data-bind="text: maximumScore"></span><br>
 <span>Average Score:</span>&nbsp;<span data-bind="text: averageScore"></span><br>
