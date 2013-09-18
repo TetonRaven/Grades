@@ -1,4 +1,4 @@
-// Check for local storage
+// * Check for local storage
 if (!localStorage) {
     alert("Your browser does not support saving changes. Entries will be lost after closing the browser or reloading the page.");
 }
